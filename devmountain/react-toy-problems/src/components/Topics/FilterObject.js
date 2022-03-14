@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 
 function FilterObject() {
@@ -24,8 +25,11 @@ function FilterObject() {
     <h4>Filter Object</h4>
     <span className='puzzleText'>Unfiltered : {JSON.stringify(unFilteredArray)} </span>
     <input className='inputLine'
+    value={userInput}
     onChange={e=>{
       setUserInput(e.target.value)
+      console.log(e.target.value)
+      console.log(userInput)
     }}  
     ></input>
     <button className='confirmationButton'
@@ -44,8 +48,8 @@ import React, { Component } from 'react'
 
 export class FilterObject extends Component {
 
-constructor(props) {
-  super(props)
+constructor() {
+  super()
 
   this.state = {
     unFilteredArray:[{name:"Billy",title:"clerk",age:26},
@@ -65,6 +69,7 @@ handleClick=()=>{
   })
     this.setState({filteredArray:filteredArr})
     console.log(filteredArr)
+    
 }
 
   render() {
